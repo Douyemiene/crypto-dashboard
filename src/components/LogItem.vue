@@ -16,6 +16,7 @@
     padding: 16px;
     margin: 4px 0px;
     transition: all .10s;
+    cursor: pointer;
 }
 
 .log-item:hover {

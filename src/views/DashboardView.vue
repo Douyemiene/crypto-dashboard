@@ -9,8 +9,23 @@ import WalletInfo from '@/components/DashboardWalletInfo.vue'
 import ActivityLog from '@/components/ActivityLog.vue'
 import PriceMovement from '@/components/PriceMovement.vue'
 import DashboardHeader from '@/components/DashboardHeader.vue'
+import ButtonTab from '@/components/ButtonTab.vue'
 
 const activeMenuTab = ref(true);
+
+const activityTab = ref(true)
+const priceTab = ref(false)
+
+const selectActiveTab = (tab: string) => {
+  if (tab === 'activity') {
+    activityTab.value = true
+    priceTab.value = false
+  }
+  if (tab === 'price') {
+    priceTab.value = true
+    activityTab.value = false
+  }
+}
 
 </script>
 
@@ -48,21 +63,16 @@ const activeMenuTab = ref(true);
       <div class="relative col-span-1 pl-8 mt-2 border-l border-gray-200">
         <IconCloseExtra class="absolute top-0 -left-3.5" />
         <div class="flex items-center gap-4 mb-4">
-          <span class="button-tabs active-tab">
-            Activity Log
-          </span>
+          <ButtonTab tag="activity log" @click="selectActiveTab('activity')" :active="activityTab" />
           <span>
             •
           </span>
-          <span class="button-tabs">
-            Price Movement
-          </span>
+          <ButtonTab tag="price movement" @click="selectActiveTab('price')" :active="priceTab" />
         </div>
 
+        <ActivityLog v-show="activityTab" />
 
-        <ActivityLog />
-        <!-- <PriceMovement/> -->
-
+        <PriceMovement v-show="priceTab" />
       </div>
     </main>
 
@@ -73,7 +83,7 @@ const activeMenuTab = ref(true);
 .group-tab {
   background: #FFFFFF 0% 0% no-repeat padding-box;
   border-radius: 10px;
-  /* height: auto; */
+  cursor: pointer;
 }
 
 .group-tab span {
@@ -94,19 +104,5 @@ const activeMenuTab = ref(true);
 .group-tab span.active {
   background-color: #262626;
   color: #FFFFFF;
-}
-
-.button-tabs {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1E1F21;
-  opacity: .5;
-}
-
-.button-tabs.active-tab {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1E1F21;
-  opacity: 1;
 }
 </style>

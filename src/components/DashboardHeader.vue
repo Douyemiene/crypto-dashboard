@@ -11,7 +11,7 @@ import IconLitecoin from '@/assets/icons/IconLitecoin.vue'
 import { ref } from 'vue';
 
 const props = defineProps<{
-    title: string
+  title: string
 }>()
 
 const showDropdown = ref(false);
@@ -22,62 +22,62 @@ const toggleDropdown = () => {
 </script>
 
 <template>
-       <header class="sticky top-0 z-50 flex items-center justify-between">
-      <h1 class="text-3xl font-bold capitalize">{{props.title}}</h1>
+  <header class="sticky top-0 z-50 flex items-center justify-between">
+    <h1 class="text-2xl font-bold capitalize">{{ props.title }}</h1>
 
-      <div class="flex items-center gap-4 icons">
-        <!-- NGN dropdown -->
-        <div class="ngn-dropdown">
-          <button class="inline-flex items-center text-center p-1.5 ngn-dropdown-button text-xs">
-            NGN
-            <IconDropdown />
-          </button>
-          <!-- Dropdown menu -->
-          <div class="absolute z-10 hidden mt-1 ngn-dropdown-menu">
-            <ul class="text-xs">
-              <li>
-                <a href="#" class="block px-4 py-2 text-gray-400">XXX</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-gray-400">XXX</a>
-              </li>
-            </ul>
-          </div>
+    <div class="flex items-center gap-3 icons">
+      <!-- NGN dropdown -->
+      <div class="ngn-dropdown">
+        <button class="inline-flex items-center text-center p-1.5 ngn-dropdown-button text-xs">
+          NGN
+          <IconDropdown />
+        </button>
+        <!-- Dropdown menu -->
+        <div class="absolute z-10 hidden mt-1 ngn-dropdown-menu">
+          <ul class="text-xs">
+            <li>
+              <a href="#" class="block px-4 py-2 text-gray-400">XXX</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 text-gray-400">XXX</a>
+            </li>
+          </ul>
         </div>
-
-        <IconWithdrawToken />
-        <IconDepositToken />
-
-        <!-- price dropdown -->
-        <div class="price-dropdown" :class="showDropdown ? 'h-full border-x' : ''">
-          <button class="inline-flex items-center gap-1 p-2 text-xs text-center" @click="toggleDropdown">
-            <IconBitcoin />
-            Bitcoin price: ₦23,456,000
-            <IconDropdownShape />
-          </button>
-          <!-- Dropdown menu -->
-          <div class="w-full my-1 " v-show="showDropdown">
-            <ul class="px-2 text-xs">
-              <li class="flex items-center">
-                <IconTether />
-                <a href="#" class="block px-4 py-2 text-gray-400">USDT</a>
-              </li>
-              <li class="flex items-center">
-                <IconDash />
-                <a href="#" class="block px-4 py-2 text-gray-400">Dash</a>
-              </li>
-              <li class="flex items-center">
-                <IconLitecoin />
-                <a href="#" class="block px-4 py-2 text-gray-400">Litecoin</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <IconProfilePlaceholder />
-
       </div>
-    </header>
+
+      <IconWithdrawToken />
+      <IconDepositToken />
+
+      <!-- price dropdown -->
+      <div class="price-dropdown" :class="showDropdown ? 'no-box-shadow' : ''">
+        <button class="inline-flex items-center gap-1 p-2 text-xs text-center" @click="toggleDropdown">
+          <IconBitcoin />
+          Bitcoin price: ₦23,456,000
+          <IconDropdownShape />
+        </button>
+        <!-- Dropdown menu -->
+        <div class="absolute z-10 w-full pb-3 price-dropdown-content border-x" v-show="showDropdown">
+          <ul class="px-2 text-xs">
+            <li class="flex items-center cursor-pointer">
+              <IconTether />
+              <a href="#" class="block px-2 py-2 text-[#787879] text-xs">USDT</a>
+            </li>
+            <li class="flex items-center cursor-pointer">
+              <IconDash />
+              <a href="#" class="block px-2 py-2 text-[#787879] text-xs">Dash</a>
+            </li>
+            <li class="flex items-center cursor-pointer">
+              <IconLitecoin />
+              <a href="#" class="block px-2 py-2 text-[#787879] text-xs">Litecoin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <IconProfilePlaceholder />
+
+    </div>
+  </header>
 </template>
 
 <style scoped>
@@ -102,9 +102,22 @@ const toggleDropdown = () => {
 }
 
 .price-dropdown {
+  position: relative;
+  display: inline-block;
   background: #FFFFFF 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 0px #262626;
   border-radius: 8px;
+}
+
+.price-dropdown.no-box-shadow {
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.price-dropdown-content {
   transition: all 0.5s ease-out;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 0px #262626;
+  border-radius: 0px 0px 8px 8px;
 }
 </style>

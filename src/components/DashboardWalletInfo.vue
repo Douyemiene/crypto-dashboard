@@ -25,7 +25,7 @@ import IconRightArrow from '@/assets/icons/IconRightArrow.vue';
                 </p>
             </div>
             <div class="wallet-item">
-                <h4 class="heading">Total Cash</h4>
+                <h4 class="heading">Total Crypto</h4>
                 <p class="figure">₦ 304,000,000,000</p>
                 <p class="total">
                     <span class="alt-text">

@@ -29,7 +29,7 @@ import LogItem from './LogItem.vue';
     background: #005674 0% 0% no-repeat padding-box;
     border-radius: 10px;
     color: var(--white);
-    padding: 11px 16px;
-    /* margin-top: 36px; */
+    padding: 8px 16px;
+    font-size: 14px;
 }
 </style>

@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 <template>
   <div class="bg-[#F7F8F9] flex flex-col h-screen w-[267px] py-8 pl-8">
 
-    <h1 class="w-32 p-3 text-base font-semibold text-center bg-gray-400 rounded-xl">[Client Logo]</h1>
+    <h1 class="w-32 p-2 text-base font-semibold text-center bg-[#BDC6CC] rounded-xl">[Client Logo]</h1>
 
     <ul class="nav">
       <li class="nav-item">
@@ -61,7 +61,6 @@ import { RouterLink } from 'vue-router';
   color: var(--green-soft);
 }
 
-
 .nav .nav-item a.router-link-exact-active {
   color: var(--green);
   font-weight: 600;
@@ -77,8 +76,4 @@ import { RouterLink } from 'vue-router';
   opacity: 1;
   transition: 0.4s;
 }
-
-/* @media (min-width: 1024px) {
- 
-} */
 </style>

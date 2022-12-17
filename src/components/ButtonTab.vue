@@ -1,36 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
 const props = defineProps<{
     tag: string
-    active?: boolean
+    active: boolean
 }>()
-
-const isActive = ref(true)
 
 </script>
 
 <template>
-  <div v-show="isActive">
-    <slot></slot>
-  </div>
-    <!-- <div class="button-tab active">
-        {{props.tag}}
-    </div> -->
+    <span class="button-tab" :class="props.active && 'active-tab'">
+        {{ props.tag }}
+    </span>
 </template>
 
 <style scoped>
 .button-tab {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1E1F21;
-  opacity: .5;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E1F21;
+    opacity: .5;
+    cursor: pointer;
+    text-transform: capitalize;
 }
 
-.active {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1E1F21;
-  opacity: 1;
+.button-tab.active-tab {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E1F21;
+    opacity: 1;
 }
 </style>
