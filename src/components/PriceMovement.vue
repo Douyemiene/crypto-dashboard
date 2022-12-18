@@ -3,6 +3,10 @@ import IconBitcoinLarge from '@/assets/icons/IconBitcoinLarge.vue'
 import IconTether from '@/assets/icons/IconTether.vue'
 import IconDash from '@/assets/icons/IconDash.vue'
 import IconLitecoin from '@/assets/icons/IconLitecoin.vue'
+import { useDashboardStore } from '@/stores/dashboard'
+
+const { priceMovement } = useDashboardStore()
+
 </script>
 
 <template>
@@ -20,229 +24,63 @@ import IconLitecoin from '@/assets/icons/IconLitecoin.vue'
         </div>
 
         <div class="mt-4">
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconBitcoinLarge />
-                    BTC
-                </span>
+            <div v-for="i in 4">
+                <div class="price-item">
+                    <span class="flex items-center gap-2">
+                        <IconBitcoinLarge />
+                        BTC
+                    </span>
 
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
+                    <span class="amount">
+                        ₦ 16,000,000
+                    </span>
 
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconTether />
-                    USDT
-                </span>
+                    <span class="percentage">
+                        +5%
+                    </span>
+                </div>
+                <div class="price-item">
+                    <span class="flex items-center gap-2">
+                        <IconTether />
+                        USDT
+                    </span>
 
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
+                    <span class="amount">
+                        ₦ 602
+                    </span>
 
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconDash />
-                    DASH
-                </span>
+                    <span class="percentage negative">
+                        -5%
+                    </span>
+                </div>
+                <div class="price-item">
+                    <span class="flex items-center gap-2">
+                        <IconDash />
+                        DASH
+                    </span>
 
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
+                    <span class="amount">
+                        '₦ 9,433
+                    </span>
 
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconLitecoin />
-                    LTC
-                </span>
+                    <span class="percentage">
+                        +5%
+                    </span>
+                </div>
+                <div class="price-item">
+                    <span class="flex items-center gap-2">
+                        <IconLitecoin />
+                        LTC
+                    </span>
 
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
+                    <span class="amount">
+                        ₦ 44,588
+                    </span>
 
-                <span class="percentage negative">
-                    -5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconBitcoinLarge />
-                    BTC
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconTether />
-                    USDT
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconDash />
-                    DASH
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconLitecoin />
-                    LTC
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage negative">
-                    -5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconBitcoinLarge />
-                    BTC
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconTether />
-                    USDT
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconDash />
-                    DASH
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconLitecoin />
-                    LTC
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage negative">
-                    -5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconBitcoinLarge />
-                    BTC
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconTether />
-                    USDT
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconDash />
-                    DASH
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage">
-                    +5%
-                </span>
-            </div>
-            <div class="price-item">
-                <span class="flex items-center gap-2">
-                    <IconLitecoin />
-                    LTC
-                </span>
-
-                <span class="amount">
-                    ₦ 400,000,000
-                </span>
-
-                <span class="percentage negative">
-                    -5%
-                </span>
+                    <span class="percentage">
+                        +5%
+                    </span>
+                </div>
             </div>
         </div>
     </div>

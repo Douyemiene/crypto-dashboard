@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import IconCloseExtra from '@/assets/icons/IconCloseExtra.vue'
 
-import { ref } from 'vue'
 import MenuTab from '@/components/MenuTab.vue'
 import DashboardOverview from '@/components/DashboardOverview.vue'
 import TradeVolume from '@/components/TradeVolume.vue'

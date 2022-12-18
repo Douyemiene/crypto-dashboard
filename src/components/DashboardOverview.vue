@@ -1,53 +1,23 @@
 <script setup lang="ts">
 import IconGreenArrowUp from '@/assets/icons/IconGreenArrowUp.vue';
+import { useDashboardStore } from '@/stores/dashboard'
 
+const { totals } = useDashboardStore()
 
 </script>
 
 <template>
     <div class="overview">
-        <div class="overview-item">
-            <span class="title">Total Users</span>
-            <span class="figure">50,450 <span>
-                    Chart
+
+        <div class="overview-item" v-for="item in totals">
+            <span class="title">{{ item.title }}</span>
+            <span class="figure">{{ item.value }} <span>
+                    chart
                 </span>
             </span>
             <span class="percentage">
-                <IconGreenArrowUp />
-                4%
-            </span>
-        </div>
-        <div class="overview-item">
-            <span class="title">Total Users</span>
-              <span class="figure">50,450 <span>
-                    Chart
-                </span>
-            </span>
-            <span class="percentage">
-                <IconGreenArrowUp />
-                4%
-            </span>
-        </div>
-        <div class="overview-item">
-            <span class="title">Total Users</span>
-              <span class="figure">50,450 <span>
-                    Chart
-                </span>
-            </span>
-            <span class="percentage">
-                <IconGreenArrowUp />
-                4%
-            </span>
-        </div>
-        <div class="overview-item">
-            <span class="title">Total Users</span>
-              <span class="figure">50,450 <span>
-                    Chart
-                </span>
-            </span>
-            <span class="percentage">
-                <IconGreenArrowUp />
-                4%
+                <IconGreenArrowUp v-show="item.positive" />
+                {{ item.percentageValue }}%
             </span>
         </div>
     </div>
@@ -74,6 +44,7 @@ import IconGreenArrowUp from '@/assets/icons/IconGreenArrowUp.vue';
     color: #787879;
     margin-bottom: 6px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
 .figure {

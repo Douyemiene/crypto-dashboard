@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import LogItem from './LogItem.vue';
 
+import { useDashboardStore } from '@/stores/dashboard'
 
+const { activities } = useDashboardStore()
 </script>
 
 <template>
     <div class="h-[70vh]">
         <div class="h-[90%] overflow-y-scroll mb-10">
             <div class="flex flex-col overflow-y-hidden">
-                <LogItem v-for="i in 10"/>
+                <LogItem v-for="log in activities" :log="log"/>
             </div>
         </div>
         <button class="activity-btn">

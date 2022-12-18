@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import type { ILog } from '@/stores/dashboard';
 
+const { log } = defineProps<{
+    log: ILog
+}>()
 </script>
 
 <template>
     <div class="log-item">
-        <p class="text">Joseph Admin just logged in</p>
-        <p class="text">IP address: 00.000.00.0</p>
-        <p class="text">May 35th 2022, 08:08:45 PM</p>
+        <p class="text">{{ log.activity }}</p>
+        <p class="text">{{ log.ip }}</p>
+        <p class="text">{{ log.date }}</p>
     </div>
 </template>
 
