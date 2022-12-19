@@ -12,9 +12,13 @@ import { ref } from 'vue';
 
 
 const showDropdown = ref(false);
+const showWalletValue = ref(true);
 
 const toggleDropdown = () => {
   showDropdown.value = !showDropdown.value
+}
+const toggleWalletValue = () => {
+  showWalletValue.value = !showWalletValue.value
 }
 </script>
 
@@ -35,9 +39,12 @@ const toggleDropdown = () => {
               Total Wallet Value
             </span>
 
-            <h3 class="flex items-center gap-4 mt-1 mb-3 text-2xl font-semibold text-white">
-              49,300,450
-              <IconHide />
+            <h3 class="flex items-center gap-4 mt-1 mb-3 text-2xl font-semibold text-white"
+              :class="showWalletValue ? '' : 'blur-value'">
+              <span>
+                ₦ 49,300,450
+              </span>
+              <IconHide @click="toggleWalletValue" class="cursor-pointer" />
             </h3>
 
             <span class="flex items-center gap-2 mb-2">
@@ -111,12 +118,15 @@ const toggleDropdown = () => {
           <h3 class="text-xl font-bold text-[#1E1F21]">
             Crypto Wallet
           </h3>
+
+          <!-- dropdown -->
           <div class="dropdown">
             <button class="flex items-center justify-between text-center px-4 py-2.5 dropdown-button text-xs"
               @click="toggleDropdown">
               Sort
               <IconDropdown />
             </button>
+
             <!-- Dropdown menu -->
             <div class="absolute z-10 mt-1 dropdown-menu" v-show="showDropdown">
               <ul class="text-xs">
@@ -130,6 +140,7 @@ const toggleDropdown = () => {
             </div>
           </div>
         </div>
+        
         <!-- crypto cards -->
         <div class="grid grid-cols-5 gap-3 h-[90%]">
           <CryptoCard v-for="i in 20" />
@@ -145,6 +156,11 @@ const toggleDropdown = () => {
   background: #112E46 0% 0% no-repeat padding-box;
   border-radius: 24px;
   height: 192px;
+}
+
+.blur-value span {
+  color: transparent;
+  text-shadow: 0 0 8px #000;
 }
 
 .currency-card {
