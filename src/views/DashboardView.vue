@@ -12,6 +12,7 @@ import DashboardHeader from '@/components/DashboardHeader.vue'
 import ButtonTab from '@/components/ButtonTab.vue'
 import MenuTabs from '@/components/MenuTabs.vue'
 import GroupedTabs from '@/components/GroupedTabs.vue'
+import IconClose from '@/assets/icons/IconClose.vue'
 
 const showSideMenu = ref(true);
 
@@ -50,7 +51,8 @@ const selectActiveTab = (tab: string) => {
           <GroupedTabs />
 
           <!-- toggle side menu -->
-          <IconCloseExtra class="ml-4" @click="toggleSideMenu" v-show="!showSideMenu" />
+          <IconClose class="ml-4" @click="toggleSideMenu" v-show="!showSideMenu" />
+          
         </div>
 
         <!-- Dashboard overview -->

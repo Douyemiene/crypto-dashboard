@@ -9,7 +9,7 @@ const router = createRouter({
       name: 'dashboard',
       component: DashboardView,
       meta: {
-        title: "Home",
+        title: 'Home',
       },
     },
     {
@@ -17,15 +17,23 @@ const router = createRouter({
       name: 'wallet',
       component: () => import('../views/WalletView.vue'),
       meta: {
-        title: "Wallet",
+        title: 'Wallet',
       },
-    }
-  ]
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFound.vue'),
+      meta: {
+        title: 'Not Found',
+      },
+    },
+  ],
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title}`;
-  next();
-});
+  document.title = `${to.meta.title}`
+  next()
+})
 
 export default router

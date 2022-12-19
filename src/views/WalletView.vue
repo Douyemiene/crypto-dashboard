@@ -9,6 +9,7 @@ import IconUsers from '@/assets/icons/IconUsers.vue';
 import IconDropdown from '@/assets/icons/IconDropdown.vue';
 import CryptoCard from '@/components/CryptoCard.vue';
 import { ref } from 'vue';
+import IconTether from '@/assets/icons/IconTether.vue';
 
 
 const showDropdown = ref(false);
@@ -62,7 +63,7 @@ const toggleWalletValue = () => {
           <div class="flex-1 p-4">
             <div class="card-info ngn">
               <span class="flex items-center gap-2 font-semibold text-[#262626] text-sm">
-                <IconBitcoinLarge />
+                <IconTether />
                 NGN
               </span>
               <span class="flex items-center gap-1">

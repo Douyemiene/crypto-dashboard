@@ -21,27 +21,26 @@ import { RouterLink } from 'vue-router';
             <span class="active-link"></span>
           </li>
           <li class="nav-item">
-            <!-- <RouterLink to="/wallet">Income</RouterLink> -->
-            Income
+            <RouterLink to="/wallet/income">Income</RouterLink>
             <span class="active-link"></span>
           </li>
         </ul>
       </li>
       <li class="nav-item">
-        <!-- <RouterLink to="/transactions">Transactions</RouterLink> -->
-        Transactions
+        <RouterLink to="/transactions">Transactions</RouterLink>
+        <span class="active-link"></span>
       </li>
       <li class="nav-item">
-        <!-- <RouterLink to="/trades">Trades</RouterLink> -->
-        Trades
+        <RouterLink to="/trades">Trades</RouterLink>
+        <span class="active-link"></span>
       </li>
       <li class="nav-item">
-        <!-- <RouterLink to="/users">Users</RouterLink> -->
-        Users
+        <RouterLink to="/users">Users</RouterLink>
+        <span class="active-link"></span>
       </li>
       <li class="nav-item">
-        <!-- <RouterLink to="/settings">Settings</RouterLink> -->
-        Settings
+        <RouterLink to="/settings">Settings</RouterLink>
+        <span class="active-link"></span>
       </li>
     </ul>
   </div>

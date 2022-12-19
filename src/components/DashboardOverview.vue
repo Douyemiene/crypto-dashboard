@@ -16,7 +16,8 @@ const { totals } = useDashboardStore()
                 </span>
             </span>
             <span class="percentage">
-                <IconGreenArrowUp v-show="item.positive" />
+                <!-- <IconGreenArrowUp v-show="item.positive" /> -->
+                <IconGreenArrowUp />
                 {{ item.percentageValue }}%
             </span>
         </div>

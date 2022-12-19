@@ -13,9 +13,9 @@ const { activities } = useDashboardStore()
                 <LogItem v-for="log in activities" :log="log"/>
             </div>
         </div>
-        <button class="activity-btn">
+        <RouterLink to='/activities' class="activity-btn">
             See All Activities
-        </button>
+        </RouterLink>
     </div>
 </template>
 

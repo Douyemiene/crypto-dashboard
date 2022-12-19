@@ -12,7 +12,7 @@ import IconWithdrawToken from '@/assets/icons/IconWithdrawToken.vue';
     <div class="wrapper">
         <div class="card-header">
             <span class="flex items-center gap-2 font-semibold text-[#262626] text-sm">
-                <IconBitcoinLarge />
+                <IconTether />
                 NGN
             </span>
             <span class="flex items-center gap-1.5">
